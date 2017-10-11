@@ -1,1 +1,17 @@
 
+Best practices for API packages
+
+So you want to write an R client for a web API? This document walks through the key issues involved in writing API wrappers in R. If you’re new to working with web APIs, you may want to start by reading “An introduction to APIs” by zapier.
+
+Overall design
+
+APIs vary widely. Before starting to code, it is important to understand how the API you are working with handles important issues so that you can implement a complete and coherent R client for the API.
+
+The key features of any API are the structure of the requests and the structure of the responses. An HTTP request consists of the following parts:
+
+HTTP verb (GET, POST, DELETE, etc.)
+The base URL for the API
+The URL path or endpoint
+URL query arguments (e.g., ?foo=bar)
+Optional headers
+An optional request body
