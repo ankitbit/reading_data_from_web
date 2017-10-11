@@ -36,3 +36,9 @@ ext_tracks <- read_fwf(ext_tracks_file,
 ext_tracks[1:3, 1:9]
 
 #Checking out the first few information about the dataset using the dplyr package's function
+library(dplyr)
+
+ext_tracks %>%
+  filter(storm_name == "KATRINA") %>%
+  select(month, day, hour, max_wind, min_pressure, rad_max_wind) %>%
+  sample_n(4)
